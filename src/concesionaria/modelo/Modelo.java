@@ -5,7 +5,6 @@ import concesionaria.backend.dtos.ClienteDTO;
 import concesionaria.backend.dtos.ServicioDTO;
 import java.util.Collection;
 
-
 public interface Modelo {
 
     public Collection<ClienteDTO> obtenerClientes();
@@ -15,8 +14,6 @@ public interface Modelo {
     public void modificar(String[] datos);
 
     public void eliminar(String datos);
-
- 
 
     public void agregarAuto(String[] datos);
 
@@ -31,7 +28,7 @@ public interface Modelo {
     public void eliminarServicio(String str);
 
     public Collection<ServicioDTO> obtenerServicios(String opcion);
-    
-     public Collection<AutoDTO> obtenerAutos(String opcion);
+
+    public Collection<AutoDTO> obtenerAutos(String opcion);
 
 }

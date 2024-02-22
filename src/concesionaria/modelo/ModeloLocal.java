@@ -13,6 +13,7 @@ import java.util.Collection;
 import java.util.ResourceBundle;
 
 public class ModeloLocal implements Modelo {
+
     private String tipo;
     private ClienteDAO clienteDAO;
     private AutoDAO autoDAO;
@@ -54,17 +55,15 @@ public class ModeloLocal implements Modelo {
 
     @Override
     public void eliminar(String str) {
-       clienteDAO.eliminarCliente(str);
+        clienteDAO.eliminarCliente(str);
 
     }
-
-  
 
     @Override
-     public Collection<AutoDTO> obtenerAutos(String opcion) {
+    public Collection<AutoDTO> obtenerAutos(String opcion) {
         return autoDAO.obtenerAutos(opcion);
     }
-    
+
     @Override
     public void agregarAuto(String[] datos) {
         autoDAO.agregarAuto(datos);
@@ -82,29 +81,27 @@ public class ModeloLocal implements Modelo {
         autoDAO.eliminarAuto(str);
     }
 
-
     @Override
-     public Collection<ServicioDTO> obtenerServicios(String opcion) {
+    public Collection<ServicioDTO> obtenerServicios(String opcion) {
         return servicioDAO.obtenerServicios(opcion);
     }
-    
+
     @Override
     public void agregarServicio(String[] datos) {
 
         servicioDAO.agregarServicio(datos);
 
     }
-    
+
     @Override
-     public void modificarServicio(String[] datos) {
+    public void modificarServicio(String[] datos) {
         servicioDAO.modificarServicio(datos);
 
     }
+
     @Override
-     public void eliminarServicio(String str) {
+    public void eliminarServicio(String str) {
         servicioDAO.eliminarServicio(str);
     }
-     
-     
 
 }

@@ -1,4 +1,3 @@
-
 package concesionaria.backend.daos.impl;
 
 import concesionaria.backend.daos.ClienteDAO;
@@ -19,11 +18,10 @@ public class ClienteDAOFactory {
 
     public ClienteDAO crearClienteDAO(String tipo) {
         try {
-            System.out.println("**"+Class.forName(f.getClass().getPackage().getName() + "." + tipo));
+           // System.out.println("**"+Class.forName(f.getClass().getPackage().getName() + "." + tipo));
             return (ClienteDAO) Class.forName(f.getClass().getPackage()
                     .getName() + "." + tipo).getDeclaredConstructor().newInstance();
-        } 
-        catch (Exception ex) {
+        } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
     }

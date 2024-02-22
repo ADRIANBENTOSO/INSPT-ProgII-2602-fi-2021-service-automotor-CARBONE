@@ -1,5 +1,5 @@
-
 package concesionaria.frontend.vista;
+
 import concesionaria.backend.dtos.ClienteDTO;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -12,16 +12,16 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ADRIAN
  */
-public class VistaClientes  extends VistaSwing {
-private  Toolkit miPantalla=Toolkit.getDefaultToolkit();
-private Image miIcono=miPantalla.getImage(getRutaImg());
+public class VistaClientes extends VistaSwing {
+
+    private Toolkit miPantalla = Toolkit.getDefaultToolkit();
+    private Image miIcono = miPantalla.getImage(getRutaImg());
 
     public VistaClientes() {
         setTitle("CLIENTES");
         setearIcono(miIcono);
         initComponents();
     }
-
 
     public void agregarClientes(Collection<ClienteDTO> clientes) {
         for (ClienteDTO cliente : clientes) {
@@ -30,14 +30,14 @@ private Image miIcono=miPantalla.getImage(getRutaImg());
     }
 
     private void agregarFila(ClienteDTO d) {
-        Object[] datos = {d.getID(),d.getDNI(), d.getNombre(),d.getApellido(),d.getMail(),d.getTel()};
+        Object[] datos = {d.getID(), d.getDNI(), d.getNombre(), d.getApellido(), d.getMail(), d.getTel()};
         DefaultTableModel dtm = (DefaultTableModel) this.jTableClientes.getModel();
-        dtm.addRow( datos );
+        dtm.addRow(datos);
     }
- private String getRutaImg(){
-            return "src\\concesionaria\\img\\hombre.png";
-        }
 
+    private String getRutaImg() {
+        return "src\\concesionaria\\img\\hombre.png";
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -249,10 +249,8 @@ private Image miIcono=miPantalla.getImage(getRutaImg());
     }//GEN-LAST:event_jTextFieldNOMBREActionPerformed
 
     /**
-     * @param args the command line arguments
-     * eleminada main
+     * @param args the command line arguments eleminada main
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAgregar;
@@ -279,7 +277,6 @@ private Image miIcono=miPantalla.getImage(getRutaImg());
     private javax.swing.JTextField jTextFieldid;
     // End of variables declaration//GEN-END:variables
 
-
     //PARTE 2
     public void addMostrarAgregar(ActionListener al) {
         this.jButtonAgregar.addActionListener(al);
@@ -292,27 +289,25 @@ private Image miIcono=miPantalla.getImage(getRutaImg());
         return datos;
     }
 
-    public  void limpiarTabla() {
-         DefaultTableModel dtm = (DefaultTableModel) this.jTableClientes.getModel();
-          for (int i = 0; i < this.jTableClientes.getRowCount();) {
+    public void limpiarTabla() {
+        DefaultTableModel dtm = (DefaultTableModel) this.jTableClientes.getModel();
+        for (int i = 0; i < this.jTableClientes.getRowCount();) {
             dtm.removeRow(i);
 
         }
     }
 
-
     public void addSeleccionarClientes(MouseListener ml) {
         this.jTableClientes.addMouseListener(ml);
     }
 
-    public boolean getSiFilaSeleccionada(){
-        return (this.jTableClientes.getSelectedRow()!=-1);
+    public boolean getSiFilaSeleccionada() {
+        return (this.jTableClientes.getSelectedRow() != -1);
     }
-
 
     public String getCodClienteSeleccionado() {
         int nroFila = this.jTableClientes.getSelectedRow();
-        return  this.jTableClientes.getValueAt(nroFila, 0).toString();
+        return this.jTableClientes.getValueAt(nroFila, 0).toString();
     }
 
     public void setCamposClienteSeleccionado() {
@@ -332,23 +327,22 @@ private Image miIcono=miPantalla.getImage(getRutaImg());
         this.jTextFieldTE.setText(tel);
     }
 
-
     public void addModicar(ActionListener al) {
         this.jButtonMODIFICAR.addActionListener(al);
 
     }
-    
+
     public void addEliminar(ActionListener al) {
         this.jButtonELIMINAR.addActionListener(al);
 
     }
-    
-     public void addLimpiar(ActionListener al) {
+
+    public void addLimpiar(ActionListener al) {
         this.jButtonLIMPIAR.addActionListener(al);
 
     }
 
-    public void Setear() {
+    public void setear() {
         this.jTextFieldDNI.setText("");
         this.jTextFieldNOMBRE.setText("");
         this.jTextFieldAPELLIDO.setText("");
@@ -356,6 +350,5 @@ private Image miIcono=miPantalla.getImage(getRutaImg());
         this.jTextFieldTE.setText("");
 
     }
-
 
 }

@@ -1,10 +1,9 @@
-
 package concesionaria.backend.daos.impl;
 
 import concesionaria.backend.daos.AutoDAO;
 
-
 public class AutoDAOFactory {
+
     private static AutoDAOFactory f = null;
 
     private AutoDAOFactory() {
@@ -25,5 +24,5 @@ public class AutoDAOFactory {
             throw new RuntimeException(ex);
         }
     }
-    
+
 }

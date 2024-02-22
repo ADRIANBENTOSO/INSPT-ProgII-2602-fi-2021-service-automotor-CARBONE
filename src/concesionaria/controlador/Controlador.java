@@ -18,7 +18,6 @@ public class Controlador {
     private VistaAutos vAutos;
     private VistaServicios vServicios;
     private static final String CAMPOS_VACIOS = "INGRESE DATOS ";
-    
 
     public Controlador(Modelo m, VistaMenu vMenu, VistaClientes vClientes, VistaAutos vAutos, VistaServicios vServicios) {
         this.m = m;
@@ -26,7 +25,7 @@ public class Controlador {
         this.vClientes = vClientes;
         this.vAutos = vAutos;
         this.vServicios = vServicios;
-       
+
     }
 
     public void iniciar() {
@@ -109,16 +108,20 @@ public class Controlador {
         }
 
         @Override
-        public void mousePressed(MouseEvent e)  {}
+        public void mousePressed(MouseEvent e) {
+        }
 
         @Override
-        public void mouseReleased(MouseEvent e) {}
+        public void mouseReleased(MouseEvent e) {
+        }
 
         @Override
-        public void mouseEntered(MouseEvent e)  {}
+        public void mouseEntered(MouseEvent e) {
+        }
 
         @Override
-        public void mouseExited(MouseEvent e)   {}
+        public void mouseExited(MouseEvent e) {
+        }
 
     }
 
@@ -137,7 +140,7 @@ public class Controlador {
                     try {
                         m.modificar(datos);
                         vClientes.mostrarExito("MODIFICACIÓN EXITOSA");
-                       
+
                     } catch (Exception ex) {
                         vClientes.mostrarError(ex.getMessage());
                     }
@@ -184,7 +187,7 @@ public class Controlador {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            vClientes.Setear();
+            vClientes.setear();
         }
     }
 
@@ -270,7 +273,7 @@ public class Controlador {
 
                     try {
                         m.modificarAuto(datos);
-                       vAutos.mostrarExito("MODIFICACIÓN EXITOSA");
+                        vAutos.mostrarExito("MODIFICACIÓN EXITOSA");
                     } catch (Exception exc) {
                         vAutos.mostrarError(exc.getMessage());
                     }
@@ -299,7 +302,7 @@ public class Controlador {
 
                 try {
                     m.eliminarAuto(d);
-                     vAutos.mostrarExito("VEHICULO ELIMINADO");
+                    vAutos.mostrarExito("VEHICULO ELIMINADO");
                 } catch (Exception exc) {
                     vAutos.mostrarError(exc.getMessage());
 
@@ -319,7 +322,7 @@ public class Controlador {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            vAutos.Setear();
+            vAutos.setear();
         }
     }
 
@@ -378,7 +381,7 @@ public class Controlador {
             } else {
                 try {
                     m.agregarServicio(datos);
-                     vServicios.mostrarExito("SERVICIO AGREGADO");
+                    vServicios.mostrarExito("SERVICIO AGREGADO");
                 } catch (Exception e) {
                     vServicios.mostrarError(e.getMessage());
                 }
@@ -436,7 +439,7 @@ public class Controlador {
 
                 try {
                     m.eliminarServicio(d);
-                     vServicios.mostrarExito("SERVICIO ELIMINADO");
+                    vServicios.mostrarExito("SERVICIO ELIMINADO");
                 } catch (Exception exc) {
                     vServicios.mostrarError("error en borrado");
 
@@ -456,7 +459,7 @@ public class Controlador {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            vServicios.Setear();
+            vServicios.setear();
         }
     }
 

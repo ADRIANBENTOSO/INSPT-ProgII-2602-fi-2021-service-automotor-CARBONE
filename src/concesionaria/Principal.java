@@ -16,7 +16,6 @@ public class Principal {
         VistaClientes vCl = new VistaClientes();
         VistaAutos vAu = new VistaAutos();
         VistaServicios vSv = new VistaServicios();
-
         Controlador c = new Controlador(m, vC, vCl, vAu, vSv);
         c.iniciar();
     }

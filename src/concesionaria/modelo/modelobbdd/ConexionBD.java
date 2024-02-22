@@ -2,14 +2,14 @@ package concesionaria.modelo.modelobbdd;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ConexionBD {
 
     private static Connection con;
-    
-    private ConexionBD(){}
+
+    private ConexionBD() {
+    }
 
     public static Connection getConexion(String driver, String url, String user, String pass) {
         if (con == null) {
@@ -21,7 +21,7 @@ public class ConexionBD {
             } catch (ClassNotFoundException ex) {
                 throw new RuntimeException("No se encuentra driver " + driver, ex);
             } catch (Exception ex) {
-                throw new RuntimeException("No se pudo establecer conexión con la BD",ex);
+                throw new RuntimeException("No se pudo establecer conexión con la BD", ex);
             }
         }
         return con;

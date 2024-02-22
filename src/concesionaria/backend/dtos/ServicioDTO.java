@@ -1,18 +1,17 @@
-
 package concesionaria.backend.dtos;
-
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 public class ServicioDTO {
+
     private int id;
     private Date fecha;
     private double costo;
     private int km;
     private int idAuto;
-    
-    public static SimpleDateFormat sdf=new SimpleDateFormat("dd-MMMMM-yyyy");
+
+    public static SimpleDateFormat sdf = new SimpleDateFormat("dd-MMMMM-yyyy");
 
     public ServicioDTO(int id, Date fecha, double costo, int km, int idAuto) {
         this.id = id;
@@ -61,12 +60,10 @@ public class ServicioDTO {
     public void setIdAuto(int idAuto) {
         this.idAuto = idAuto;
     }
-    
-    public  String getFechaString(){
-         String fechaCadena=sdf.format(this.fecha);
+
+    public String getFechaString() {
+        String fechaCadena = sdf.format(this.fecha);
         return fechaCadena;
     }
-    
-    
-    
+
 }

@@ -1,0 +1,373 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>100</x><y>220</y><w>110</w><h>50</h></coordinates><panel_attributes>ModeloLocal
+--
+-miPantalla:Toolkit
+-miIcono:Image
+--
++VistaAutos()
++limpiarTabla():void
++agregarAutos(Collection&lt;AutoDTO&gt; ):void
+-agregarFila(AutoDTO).void
++addSeleccionarAuto(MouseListener ):void
++setCamposAutoSeleccionado():void
++ getSiFilaSeleccionada():boolean
++addAgregarAuto(ActionListener):void
++dameDatos():String[]
++addModicarAuto(ActionListener):void
++addEliminar(ActionListener):void
++ getCodAutoSeleccionado():String
++addLimpiarAutos(ActionListener):void
++setear():void
++opcionAuto();String
++addOpcionAuto(ActionListener):void
+-getRutaImg():String
+
+
+
+
+
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>700</x><y>180</y><w>80</w><h>60</h></coordinates><panel_attributes>AutoDTO
+--
+-ID:int
+-patente:String
+-marca:String
+-modelo:String
+-anio:int
+-idCliente:int
+-propietario:String
+--
++AutoDTO(int , String , String , String , int , int , String )
++getID():int
++setID(int):void
++getPatente():String
++setPatente(String):void
++getMarca():String
++setMarca(String):void
++getModelo():String
++setModelo(String):void
++ getAnio():int
++setAnio(int):void
++ getIdCliente():int
++ setIdCliente(int);void
++getProietario():String
++setProietario(String)
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>470</y><w>100</w><h>50</h></coordinates><panel_attributes>VistaMenu
+--
+- miPantalla: Tookit
+  -miIcono: Image
+  - sdf :SimpleDateFormat
+--
++VistaMenu()
++addMostrarClaseClientes(ActionListener):void
++ addMostrarAutos(ActionListener):void
++addMostrarSevicios(ActionListener):void
+-getRutaImg():String
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>520</x><y>400</y><w>100</w><h>60</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+/Modelo/
+--
+--
+/+obtenerClientes():Collection&lt;ClienteDTO&gt;/
+/+agregar(String[]):void/
+/+modificar(String[] ):void/
+/+eliminar(String):void/
+/+agregarAuto(String[]):void/
+/+modificarAuto(String[]:void/
+/+eliminarAuto(String):void/
+/+agregarServicio(String[]):void/
+/+modificarServicio(String[]):void/
+/+eliminarServicio(String):void/
+/+obtenerServicios(String):Collection&lt;ServicioDTO&gt;/
+/+obtenerAutos(String):Collection&lt;AutoDTO&gt;/
+
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>380</y><w>310</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m
+
+</panel_attributes><additional_attributes>290;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>510</y><w>90</w><h>60</h></coordinates><panel_attributes>VistaClientes
+--
+-miPantalla:Toolkit
+-miIcono:Image
+--
++VistaClientes()
++agregarClientes(Collection&lt;ClienteDTO&gt; ):void
+-agregarFila(ClienteDTO )void
+-getRutaImg():String
++addMostrarAgregar(ActionListener)void
++dameDatos():String[]
++limpiarTabla():void
++addSeleccionarClientes(MouseListener):void
++getSiFilaSeleccionada():boolean
++getCodClienteSeleccionado():String
++setCamposClienteSeleccionado():void
++addModicar(ActionListener ):void
++ addEliminar(ActionListener)void
++addLimpiar(ActionListener):void
++ setear():void
+
+
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>190</x><y>470</y><w>110</w><h>50</h></coordinates><panel_attributes>VistaAutos
+--
+- miPantalla:Toolkit
+-miIcono:Image
+--
+-limpiarTabla():void
+-agregarAutos(Collection&lt;AutoDTO&gt; )void
+-agregarFila(AutoDTO):void
+-addSeleccionarAuto(MouseListener):void
+-setCamposAutoSeleccionado():void
+-getSiFilaSeleccionada():boolean
+- addAgregarAuto(ActionListener):void
+-dameDatos():String[]
+-addModicarAuto(ActionListener):void
+-addEliminar(ActionListener):void
+-getCodAutoSeleccionado():String
+-addLimpiarAutos(ActionListener):void
+-setear() :void
+-opcionAuto():String
+-addOpcionAuto(ActionListener):void
+-getRutaImg():String
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>520</y><w>110</w><h>50</h></coordinates><panel_attributes>VistaServicios
+--
+-miPantalla:Toolkit
+-miIcono:Image
+--
++VistaServicios()
++limpiarTabla():void
++agregarServicios(Collection&lt;ServicioDTO&gt;)void
+-agregarFila(ServicioDTO)void
++addSeleccionarServicio(MouseListener):void
++ setCamposServicioSeleccionado():void
++getSiFilaSeleccionada():boolean
++addAgregarServicio(ActionListener):void
++dameDatos():String[]
++addModicarServicio(ActionListener):void
++addEliminar(ActionListener):void
++getCodServicioSeleccionado():String
++addLimpiarServicios(ActionListener):void
++setear();void
++opcionServicio():String
++ addOpcionServicio(ActionListener):void
+-getRutaImg():Strring
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>390</y><w>520</w><h>150</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+vSevicios
+</panel_attributes><additional_attributes>500;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>40</x><y>390</y><w>130</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+vistaMenu</panel_attributes><additional_attributes>10;80;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>390</y><w>370</w><h>140</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+vistaClientes</panel_attributes><additional_attributes>350;120;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>170</y><w>90</w><h>80</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+/AutoDAO/
+--
+--
+/+obtenerAutos(String ):Collection&lt;AutoDTO&gt;/
+/+agregarAuto(String[] ):void/
+/+modificarrAuto(String[] ):void/
+/+eliminarAuto(String[] ):void/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>260</y><w>80</w><h>60</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+/ClienteDAO/
+--
+--
+/+obtenerClientes():Collection&lt;ClienteDTO&gt;/
+/+ agregarCliente(String [] ):void/
+/+ modificarCliente(String [] ):void/
+/+ eliminarCliente(String [] ):void/
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>330</y><w>80</w><h>50</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+/ServicioDAO/
+--
+--
+/+obtenerServicios(String ):Collection&lt;ServicioDTO&gt;/
+/+ agregarServicio(String []):void/
+/+ modificarServicio(String[] ):void/
+/+eliminarServicio(String ):void
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>210</y><w>350</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+autoDAO</panel_attributes><additional_attributes>330;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>250</y><w>350</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+clienteDAO
+</panel_attributes><additional_attributes>330;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>250</y><w>350</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+servicioDAO</panel_attributes><additional_attributes>330;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>130</x><y>260</y><w>450</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>430;140;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>260</y><w>80</w><h>50</h></coordinates><panel_attributes>ClienteDTO
+--
+-ID:int
+-DNI:String
+-nombre:String
+-apellido:String
+-mail:String
+-tel:String
+--
+-ClienteDTO(int ID, DNI, String , String , String , String)
++ getID() :int
++setID(int):void
++getDNI():String
++ setDNI(String):void
++getNombre():String
++setNombre(String)void
++getApellido():String
++setApellido(String):void
++getMail():String
++setMail(String):void
++getTel():String
++setTel(String):void
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>680</x><y>340</y><w>80</w><h>50</h></coordinates><panel_attributes>ServicioDTO
+--
+-id:int
+-fecha:Date
+-costo:double
+-km:int
+idAuto:int
+- sdf: SimpleDateFormat
+--
++ServicioDTO(int , Date , double , int , int )
++getId():int
++setId(int):void
++getFecha():Date
++setFecha(Date):void
++getCosto():double
++setCosto(double):void
++getKm():int
++setKm(int):void
++getIdAuto():int
++setIdAuto(int):void
++ getFechaString():String
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>610</x><y>210</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>280</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>350</y><w>100</w><h>40</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>80;20;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>220</y><w>110</w><h>50</h></coordinates><panel_attributes>AutoDAOMySQL
+--
+--
++obtenerAutos(String):Collection&lt;AutoDTO&gt;
++ agregarAuto(String[]):void
++ modificarAuto(String[]):void
++eliminarAuto(String):void
+-devolverSentenciaSeleccionada(String):String
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>300</y><w>110</w><h>50</h></coordinates><panel_attributes>ClienteDAOMySQL
+--
+--
++obtenerClientes():Collection&lt;ClienteDTO&gt;
++agregarCliente(String[]):void
++modificarCliente(String[]):void
++eliminarCliente(String):void+
+-devolverSentenciaSeleccionada(String):String
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>610</x><y>240</y><w>220</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;200;10</additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>310</y><w>230</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;210;10</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>190</y><w>60</w><h>60</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;40;40</additional_attributes></element><element><id>Relation</id><coordinates><x>740</x><y>270</y><w>90</w><h>50</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;70;30</additional_attributes></element><element><id>UMLClass</id><coordinates><x>970</x><y>290</y><w>130</w><h>70</h></coordinates><panel_attributes>ConexionBD
+--
+_-con:Connection_
+--
+-ConexionBD()
+
+_+getConexion(String , String , String , String ):Connection_
+_+getConexion()_
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>910</x><y>240</y><w>80</w><h>100</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>60;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>910</x><y>320</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>60;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>370</x><y>30</y><w>120</w><h>60</h></coordinates><panel_attributes>AutoFactory
+--
+_-AutoDAOFactory_
+--
+- AutoDAOFactory()
+_-getInstance():AutoDAOFactory_
++crearAutoDAO(String ):AutoDAO
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>370</x><y>100</y><w>120</w><h>50</h></coordinates><panel_attributes>ClienteFactory
+--
+_-ClienteDAOFactory_
+--
+- ClienteDAOFactory()
+_-getInstance():ClienteDAOFactory_
++crearClienteDAO(String ):AutoDAO</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>490</y><w>110</w><h>50</h></coordinates><panel_attributes>ServicioDAOMySQL
+--
+--
++obtenerServicios(String):Collection&lt;ServicioDTO&gt;
++agregarServicio(String[]):void
++modificarServicio(String[]):void
++eliminarServicio(String):void
+-devolverSentenciaSeleccionada(String):String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>370</y><w>240</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;220;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>370</x><y>170</y><w>120</w><h>50</h></coordinates><panel_attributes>ServicioFactory
+--
+_-ServicioDAOFactory_
+--
+- ServicioDAOFactory()
+_-getInstance():ServicioDAOFactory_
++crearServicioDAO(String ):ServicioDAO</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>50</y><w>190</w><h>220</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>170;10;10;200</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>110</y><w>190</w><h>160</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>170;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>180</y><w>190</w><h>90</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>170;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>860</x><y>350</y><w>160</w><h>160</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>140;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>40</y><w>100</w><h>150</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>80;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>120</y><w>70</w><h>180</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>50;160;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>200</y><w>70</w><h>160</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>50;140;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>200</x><y>600</y><w>110</w><h>50</h></coordinates><panel_attributes>/VistaSwing/
+--
+--
++mostrarError(String):void
++mostrarExito(String):void
++mostrar(Component):void
++ mostrar():void
++setearIcono(Image):void
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>30</x><y>510</y><w>250</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;230;90</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>560</y><w>460</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>440;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>560</y><w>320</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>300;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>510</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>700</x><y>380</y><w>50</w><h>160</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;30;140</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>300</y><w>120</w><h>250</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>100;10;10;230</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>230</y><w>510</w><h>430</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>480;10;490;410;10;290</additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>340</y><w>170</w><h>60</h></coordinates><panel_attributes>Controlador
+--
+-m:Modelo
+-vMenu:VistaMenu
+-vClientes;VistaClientes 
+-vAutos:VistaAutos 
+-vServicios:VistaServicios 
+--
++ Controlador(Modelo , VistaMenu , VistaClientes , VistaAutos , VistaServicios ) 
++iniciar():void
+--
+{innerclass
+InnerClass
+innerclass}
+-ConsultarClientes
+-AgregarClientes
+-SeleccionarCliente
+-ClaseModificar
+-EliminarCliente
+-LimpiarCampos
+-SeleccionarAuto
+-AgregarAuto
+-ClaseModificarAuto
+-EliminarAuto
+-LimpiarCamposAutos
+-SeleccionarServicio
+-AgregarServicio
+-ClaseModificarServicio
+-EliminarServicio
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>390</y><w>120</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+vistaAutos</panel_attributes><additional_attributes>70;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>610</x><y>380</y><w>90</w><h>70</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>70;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>610</x><y>290</y><w>80</w><h>160</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>60;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>610</x><y>200</y><w>220</w><h>280</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>170;10;200;260;10;230</additional_attributes></element></diagram>

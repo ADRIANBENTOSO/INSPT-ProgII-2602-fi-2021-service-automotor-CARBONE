@@ -1,4 +1,3 @@
-
 package concesionaria.frontend.vista;
 
 import concesionaria.backend.dtos.ServicioDTO;
@@ -11,27 +10,31 @@ import javax.swing.table.DefaultTableModel;
 import java.util.Calendar;
 import java.awt.Image;
 import java.awt.Toolkit;
+
 /**
  *
  * @gracias a domi
  */
 public class VistaServicios extends VistaSwing {
-private  Toolkit miPantalla=Toolkit.getDefaultToolkit();
-private Image miIcono=miPantalla.getImage(getRutaImg());
 
-     public VistaServicios() {
-         setearIcono(miIcono);
+    private Toolkit miPantalla = Toolkit.getDefaultToolkit();
+    private Image miIcono = miPantalla.getImage(getRutaImg());
+
+    public VistaServicios() {
+        setearIcono(miIcono);
         initComponents();
-      
+
     }
-     public  void limpiarTabla() {
-         DefaultTableModel dtm = (DefaultTableModel) this.jTableServicios.getModel();
-          for (int i = 0; i < this.jTableServicios.getRowCount();) {
+
+    public void limpiarTabla() {
+        DefaultTableModel dtm = (DefaultTableModel) this.jTableServicios.getModel();
+        for (int i = 0; i < this.jTableServicios.getRowCount();) {
             dtm.removeRow(i);
 
         }
     }
-     public void agregarServicios(Collection<ServicioDTO> clientes) {
+
+    public void agregarServicios(Collection<ServicioDTO> clientes) {
         for (ServicioDTO cliente : clientes) {
             agregarFila(cliente);
         }
@@ -39,99 +42,95 @@ private Image miIcono=miPantalla.getImage(getRutaImg());
 
     private void agregarFila(ServicioDTO d) {
 
-        Object[] datos = {d.getId(),d.getFechaString(), d.getCosto(),d.getKm(),d.getIdAuto()};
+        Object[] datos = {d.getId(), d.getFechaString(), d.getCosto(), d.getKm(), d.getIdAuto()};
         DefaultTableModel dtm = (DefaultTableModel) this.jTableServicios.getModel();
-        dtm.addRow( datos );
+        dtm.addRow(datos);
     }
-    
-      public void addSeleccionarServicio(MouseListener ml) {
+
+    public void addSeleccionarServicio(MouseListener ml) {
         this.jTableServicios.addMouseListener(ml);
     }
-      
-       public void setCamposServicioSeleccionado() {
+
+    public void setCamposServicioSeleccionado() {
         int nroFila = this.jTableServicios.getSelectedRow();
         int id = (int) this.jTableServicios.getValueAt(nroFila, 0);
         //Date fecha =(Date)this.jTableServicios.getValueAt(nroFila, 1);
-        String  fecha =(String)this.jTableServicios.getValueAt(nroFila, 1);
+        String fecha = (String) this.jTableServicios.getValueAt(nroFila, 1);
         double costo = (double) this.jTableServicios.getValueAt(nroFila, 2);
         int km = (int) this.jTableServicios.getValueAt(nroFila, 3);
         int idAuto = (int) this.jTableServicios.getValueAt(nroFila, 4);
-        
 
         this.jTextFieldiD.setText("" + id);
         this.jTextFieldFecha.setText(fecha);
-        this.jTextFieldCosto.setText(""+costo);
-        this.jTextFieldKM.setText(""+km);
-        this.jTextFieldIDAUTO.setText(""+idAuto);
-        
+        this.jTextFieldCosto.setText("" + costo);
+        this.jTextFieldKM.setText("" + km);
+        this.jTextFieldIDAUTO.setText("" + idAuto);
+
     }
 
-       public boolean getSiFilaSeleccionada(){
-        return (this.jTableServicios.getSelectedRow()!=-1);
+    public boolean getSiFilaSeleccionada() {
+        return (this.jTableServicios.getSelectedRow() != -1);
     }
-          public void addAgregarServicio(ActionListener al) {
+
+    public void addAgregarServicio(ActionListener al) {
         this.jButtonAGREGAR.addActionListener(al);
 
     }
 
     public String[] dameDatos() {
         String fecha;
-        fecha=  ((JTextField)this.jDateChooserFecha.getDateEditor().getUiComponent()).getText();
+        fecha = ((JTextField) this.jDateChooserFecha.getDateEditor().getUiComponent()).getText();
         String[] datos = {this.jTextFieldiD.getText(), fecha, this.jTextFieldCosto.getText(), this.jTextFieldKM.getText(),
             this.jTextFieldIDAUTO.getText()};
         return datos;
     }
-    
-    
 
     public void addModicarServicio(ActionListener al) {
         this.jButtonMODIFICAR.addActionListener(al);
 
     }
-    
-       public void addEliminar(ActionListener al) {
+
+    public void addEliminar(ActionListener al) {
         this.jButtonELIMINAR.addActionListener(al);
 
     }
-     
+
     public String getCodServicioSeleccionado() {
         int nroFila = this.jTableServicios.getSelectedRow();
         //return (int) this.jTableClientes.getValueAt(nroFila, 0);
-        return  this.jTableServicios.getValueAt(nroFila, 0).toString();
+        return this.jTableServicios.getValueAt(nroFila, 0).toString();
     }
-        
-      public void addLimpiarServicios(ActionListener al) {
+
+    public void addLimpiarServicios(ActionListener al) {
         this.jButtonLIMPIAR.addActionListener(al);
 
     }
 
-    public void Setear() {
+    public void setear() {
         this.jTextFieldFecha.setText("");
         this.jTextFieldCosto.setText("");
         this.jTextFieldKM.setText("");
         this.jTextFieldIDAUTO.setText("");
-      
-         Date fechaHoy=new  java.sql.Date(Calendar.getInstance().getTime().getTime());
-         System.out.println("---"+fechaHoy);
-         this.jDateChooserFecha.setDate(null);
+
+        Date fechaHoy = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+        System.out.println("---" + fechaHoy);
+        this.jDateChooserFecha.setDate(null);
     }
 
-        public String opcionServicio() {
+    public String opcionServicio() {
         String s = (String) this.jComboBoxOpcion.getSelectedItem();
         return s;
     }
-    
-     public void addOpcionServicio(ActionListener al) {
+
+    public void addOpcionServicio(ActionListener al) {
         this.jComboBoxOpcion.addActionListener(al);
-      
-             
+
     }
- private String getRutaImg(){
-            return "src\\concesionaria\\img\\servicio.jpg";
-        }
-         
-        
-        
+
+    private String getRutaImg() {
+        return "src\\concesionaria\\img\\servicio.jpg";
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -282,7 +281,6 @@ private Image miIcono=miPantalla.getImage(getRutaImg());
     /**
      * @param args the command line arguments
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;

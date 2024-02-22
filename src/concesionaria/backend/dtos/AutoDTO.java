@@ -1,29 +1,15 @@
-
 package concesionaria.backend.dtos;
 
-
 public class AutoDTO {
-    
-    private int  ID;
+
+    private int ID;
     private String patente;
     private String marca;
     private String modelo;
     private int anio;
     private int idCliente;
-    
-    private String propietario;
 
-    public AutoDTO() {
-    }
-//
-//    public AutoDTO(int ID, String patente, String marca, String modelo, int anio, int idCliente) {
-//        this.ID = ID;
-//        this.patente = patente;
-//        this.marca = marca;
-//        this.modelo = modelo;
-//        this.anio = anio;
-//        this.idCliente = idCliente;
-//    }
+    private String propietario;
 
     public AutoDTO(int ID, String patente, String marca, String modelo, int anio, int idCliente, String propietario) {
         this.ID = ID;
@@ -34,8 +20,6 @@ public class AutoDTO {
         this.idCliente = idCliente;
         this.propietario = propietario;
     }
-
-
 
     public int getID() {
         return ID;
@@ -93,6 +77,4 @@ public class AutoDTO {
         this.propietario = proietario;
     }
 
-
-    
 }

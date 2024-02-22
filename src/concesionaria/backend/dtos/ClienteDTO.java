@@ -9,9 +9,6 @@ public class ClienteDTO {
     private String mail;
     private String tel;
 
-    public ClienteDTO() {
-    }
-
     public ClienteDTO(int ID, String DNI, String nombre, String apellido, String mail, String tel) {
         this.ID = ID;
         this.DNI = DNI;

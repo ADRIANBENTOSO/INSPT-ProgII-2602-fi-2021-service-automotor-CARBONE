@@ -1,4 +1,3 @@
-
 package concesionaria.frontend.vista;
 
 import concesionaria.backend.dtos.AutoDTO;
@@ -9,41 +8,42 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.Image;
 import java.awt.Toolkit;
 
+public class VistaAutos extends VistaSwing {
 
-public class VistaAutos  extends VistaSwing {
-private  Toolkit miPantalla=Toolkit.getDefaultToolkit();
-private Image miIcono=miPantalla.getImage(getRutaImg());
- 
+    private Toolkit miPantalla = Toolkit.getDefaultToolkit();
+    private Image miIcono = miPantalla.getImage(getRutaImg());
+
     public VistaAutos() {
         setearIcono(miIcono);
         initComponents();
-      
+
     }
-    
-      public  void limpiarTabla() {
-         DefaultTableModel dtm = (DefaultTableModel) this.jTableAutos.getModel();
-          for (int i = 0; i < this.jTableAutos.getRowCount();) {
+
+    public void limpiarTabla() {
+        DefaultTableModel dtm = (DefaultTableModel) this.jTableAutos.getModel();
+        for (int i = 0; i < this.jTableAutos.getRowCount();) {
             dtm.removeRow(i);
 
         }
     }
-      
-       public void agregarAutos(Collection<AutoDTO> clientes) {
+
+    public void agregarAutos(Collection<AutoDTO> clientes) {
         for (AutoDTO cliente : clientes) {
             agregarFila(cliente);
         }
     }
 
     private void agregarFila(AutoDTO d) {
-        Object[] datos = {d.getID(),d.getPatente(), d.getMarca(),d.getModelo(),d.getAnio(),d.getIdCliente(),d.getProietario()};
+        Object[] datos = {d.getID(), d.getPatente(), d.getMarca(), d.getModelo(), d.getAnio(), d.getIdCliente(), d.getProietario()};
         DefaultTableModel dtm = (DefaultTableModel) this.jTableAutos.getModel();
-        dtm.addRow( datos );
+        dtm.addRow(datos);
     }
-      public void addSeleccionarAuto(MouseListener ml) {
+
+    public void addSeleccionarAuto(MouseListener ml) {
         this.jTableAutos.addMouseListener(ml);
     }
-      
-       public void setCamposAutoSeleccionado() {
+
+    public void setCamposAutoSeleccionado() {
         int nroFila = this.jTableAutos.getSelectedRow();
         int id = (int) this.jTableAutos.getValueAt(nroFila, 0);
         String patente = (String) this.jTableAutos.getValueAt(nroFila, 1);
@@ -56,47 +56,49 @@ private Image miIcono=miPantalla.getImage(getRutaImg());
         this.jTextFieldPatente.setText(patente);
         this.jTextFieldMarca.setText(marca);
         this.jTextFieldModelo.setText(modelo);
-        this.jTextFieldAnio.setText(""+anio);
-        this.jTextFieldIdCliente.setText(""+idCliente);
-        this.jTextFieldCODIGOagregado.setText(""+idCliente);
+        this.jTextFieldAnio.setText("" + anio);
+        this.jTextFieldIdCliente.setText("" + idCliente);
+        this.jTextFieldCODIGOagregado.setText("" + idCliente);
     }
 
-       public boolean getSiFilaSeleccionada(){
-        return (this.jTableAutos.getSelectedRow()!=-1);
+    public boolean getSiFilaSeleccionada() {
+        return (this.jTableAutos.getSelectedRow() != -1);
     }
 
-       public void addAgregarAuto(ActionListener al) {
+    public void addAgregarAuto(ActionListener al) {
         this.jButtonAGREGAR.addActionListener(al);
 
     }
-      
-         public String[] dameDatos(){
-        String[]datos={this.jTextFieldId.getText()  ,this.jTextFieldPatente.getText(),this.jTextFieldMarca.getText(),this.jTextFieldModelo.getText(),
-        this.jTextFieldAnio.getText(),this.jTextFieldCODIGOagregado.getText()};
-              return datos;
+
+    public String[] dameDatos() {
+        String[] datos = {this.jTextFieldId.getText(), this.jTextFieldPatente.getText(), this.jTextFieldMarca.getText(), this.jTextFieldModelo.getText(),
+            this.jTextFieldAnio.getText(), this.jTextFieldCODIGOagregado.getText()};
+        return datos;
 
     }
-      public void addModicarAuto(ActionListener al) {
+
+    public void addModicarAuto(ActionListener al) {
         this.jButtonMODIFICAR.addActionListener(al);
 
     }
-      
-        public void addEliminar(ActionListener al) {
+
+    public void addEliminar(ActionListener al) {
         this.jButtonELIMINAR.addActionListener(al);
 
     }
-         public String getCodAutoSeleccionado() {
+
+    public String getCodAutoSeleccionado() {
         int nroFila = this.jTableAutos.getSelectedRow();
         //return (int) this.jTableClientes.getValueAt(nroFila, 0);
-        return  this.jTableAutos.getValueAt(nroFila, 0).toString();
+        return this.jTableAutos.getValueAt(nroFila, 0).toString();
     }
-        
-          public void addLimpiarAutos(ActionListener al) {
+
+    public void addLimpiarAutos(ActionListener al) {
         this.jButtonLIMPIAR.addActionListener(al);
 
     }
 
-    public void Setear() {
+    public void setear() {
         this.jTextFieldPatente.setText("");
         this.jTextFieldMarca.setText("");
         this.jTextFieldModelo.setText("");
@@ -104,20 +106,20 @@ private Image miIcono=miPantalla.getImage(getRutaImg());
         this.jTextFieldCODIGOagregado.setText("");
 
     }
-  public String opcionAuto() {
+
+    public String opcionAuto() {
         String s = (String) this.jComboBoxOpcion.getSelectedItem();
         return s;
     }
-    
-     public void addOpcionAuto(ActionListener al) {
+
+    public void addOpcionAuto(ActionListener al) {
         this.jComboBoxOpcion.addActionListener(al);
-      
-             
+
     }
-      private String getRutaImg(){
-            return "src\\concesionaria\\img\\auto.png";
-        }
-         
+
+    private String getRutaImg() {
+        return "src\\concesionaria\\img\\auto.png";
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -292,7 +294,6 @@ private Image miIcono=miPantalla.getImage(getRutaImg());
     /**
      * @param args the command line arguments
      */
- 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAGREGAR;
